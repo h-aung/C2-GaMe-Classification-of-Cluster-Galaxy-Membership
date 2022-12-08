@@ -13,7 +13,10 @@ from joblib import load
 from dataclasses import dataclass
 
 TRAINED_RF_CLF_PATH = "classifiers/clf_rf.joblib"
+TRAINED_RF_CLF_NO_SSFR_PATH = "classifiers/clf_rf_no_ssfr.joblib"
+
 TRAINED_KNN_CLF_PATH= "classifiers/clf_knn.joblib"
+TRAINED_KNN_CLF_NO_SSFR_PATH = "classifiers/clf_knn_no_ssfr.joblib"
 
 @dataclass
 class RF:
@@ -24,7 +27,15 @@ class RF:
     One method outputs deterministic predictions, and the other one outputs probabilistic
     predictions.
     """
-    classifier: RandomForestClassifier = load(TRAINED_RF_CLF_PATH)
+
+    def __init__(self, sSFR=False):
+        """
+        Initialize an RF object, with an option to include sSFR as an input feature to the model or not.
+        """
+        if sSFR:
+            self.classifier: RandomForestClassifier = load(TRAINED_RF_CLF_PATH)
+        else:
+            self.classifier: RandomForestClassifier = load(TRAINED_RF_CLF_NO_SSFR_PATH)
     
     def predict_det(self, data: pd.DataFrame) -> np.ndarray:
         """
@@ -36,8 +47,7 @@ class RF:
         Columns that must exist in the data DataFrame:
             d2d: 2d radius
             v: LOS velocity
-            mratio: mass ratio
-            ssfr: specific star formation rate
+            ssfr (optional): specific star formation rate
         """
         return self.classifier.predict(data)
     
@@ -52,8 +62,7 @@ class RF:
         Columns that must exist in the data DataFrame:
             d2d: 2d radius
             v: LOS velocity
-            mratio: mass ratio
-            ssfr: specific star formation rate
+            ssfr (optional): specific star formation rate
         """
         return self.classifier.predict_proba(data)
 
@@ -68,7 +77,15 @@ class KNN:
     One method outputs deterministic predictions, and the other one outputs probabilistic
     predictions.
     """
-    classifier: KNeighborsClassifier= load(TRAINED_KNN_CLF_PATH)
+
+    def __init__(self, sSFR=False):
+        """
+        Initialize an RF object, with an option to include sSFR as an input feature to the model or not.
+        """
+        if sSFR:
+            self.classifier: KNeighborsClassifier = load(TRAINED_KNN_CLF_PATH)
+        else:
+            self.classifier: KNeighborsClassifier = load(TRAINED_KNN_CLF_NO_SSFR_PATH)
     
     def predict_det(self, data: pd.DataFrame) -> np.ndarray:
         """
@@ -80,8 +97,7 @@ class KNN:
         Columns that must exist in the data DataFrame:
             d2d: 2d radius
             v: LOS velocity
-            mratio: mass ratio
-            ssfr: specific star formation rate
+            ssfr (optional): specific star formation rate
         """
         return self.classifier.predict(data)
     
@@ -96,7 +112,6 @@ class KNN:
         Columns that must exist in the data DataFrame:
             d2d: 2d radius
             v: LOS velocity
-            mratio: mass ratio
-            ssfr: specific star formation rate
+            ssfr (optional): specific star formation rate
         """
         return self.classifier.predict_proba(data)

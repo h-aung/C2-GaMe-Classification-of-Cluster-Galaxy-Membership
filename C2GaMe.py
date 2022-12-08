@@ -3,7 +3,7 @@ Module for C2-GaMe (Classification of Cluster Galaxy Membership) model.
 
 This module gives access to trained Random Forest (RF), k-Nearest-Neighbors (kNN),
 and Linear Support Vector Classifier (SVC) models, trained with MDPL2 projected phase-space
-(2D) data.
+(2D) data with 2d radius and LOS velocity (and optional sSFR) as input features.
 """
 import numpy as np
 import pandas as pd

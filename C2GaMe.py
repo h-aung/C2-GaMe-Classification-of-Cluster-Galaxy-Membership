@@ -30,7 +30,7 @@ class RF:
 
     def __init__(self, sSFR=False):
         """
-        Initialize an RF object, with an option to include sSFR as an input feature to the model or not.
+        Initialize an RF object, with an option to include sSFR (specific star formation rate) as an input feature to the model or not.
         """
         if sSFR:
             self.classifier: RandomForestClassifier = load(TRAINED_RF_CLF_PATH)

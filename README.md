@@ -2,7 +2,7 @@
 Classification of Galaxy Cluster Membership with Machine Learning code for importing trained models and generating figures.
 
 ## C2GaMe.py
-This module includes classes for RF, KNN, and SVC which give access to the trained classifiers, as well as methods to make deterministic and probabilistic predictions.
+This module includes classes for RF, KNN, and Logistic Regression which give access to the trained classifiers, as well as methods to make deterministic and probabilistic predictions.
 
 See the C2GaMe_example.py file (and below) for an example of how to import and use the module.
 
@@ -60,3 +60,9 @@ KNN.predict_proba(example_data_no_ssfr)
 To access and download files necessary to generate the figures in the C2GaMe_Figures.ipynb file, please see the "Figure Files" folder at [https://drive.google.com/drive/folders/1qjy32e_gtoafJlajz9N8v14aPLFbhX8o?usp=sharing](https://drive.google.com/drive/folders/1SxetDYJoWt_sLOc9spp3FttuM-cjRg29?usp=sharing)
 
 Once downloaded, edit the filepaths in the "Filepaths" section of the Jupyter Notebook to point to the appropriate files.
+
+## CsGaMe Classifiers
+
+To access and download the RF, KNN, and Logistic Regression classifiers used in the C2GaMe module, please see the "Classifiers" folder at [https://drive.google.com/drive/folders/1qjy32e_gtoafJlajz9N8v14aPLFbhX8o?usp=sharing](https://drive.google.com/drive/folders/1SxetDYJoWt_sLOc9spp3FttuM-cjRg29?usp=sharing).
+
+Once downloaded, place them in a folder called "classifiers" in the same directory as the C2GaMe.py module.

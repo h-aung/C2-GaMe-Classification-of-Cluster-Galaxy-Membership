@@ -2,7 +2,7 @@
 Module for C2-GaMe (Classification of Cluster Galaxy Membership) model.
 
 This module gives access to trained Random Forest (RF), k-Nearest-Neighbors (kNN),
-and Linear Support Vector Classifier (SVC) models, trained with MDPL2 projected phase-space
+and Logistic Regression models, trained with MDPL2 projected phase-space
 (2D) data with 2d radius and LOS velocity (and optional sSFR) as input features.
 """
 import numpy as np
@@ -12,6 +12,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from joblib import load
 from dataclasses import dataclass
+
+# download the classifiers at https://drive.google.com/drive/folders/1xr5jMuBaxq8YSbLZPBAr51xAoaLPDZW7?usp=sharing
 
 TRAINED_RF_CLF_PATH = "classifiers/clf_rf.joblib"
 TRAINED_RF_CLF_NO_SSFR_PATH = "classifiers/clf_rf_no_ssfr.joblib"

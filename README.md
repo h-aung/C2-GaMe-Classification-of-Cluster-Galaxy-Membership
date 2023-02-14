@@ -61,6 +61,12 @@ To access and download files necessary to generate the figures in the C2GaMe_Fig
 
 Once downloaded, edit the filepaths in the "Filepaths" section of the Jupyter Notebook to point to the appropriate files.
 
+## C2-GaMe-Statistical-Metrics.ipynb
+
+This notebook shows computation of each of the statistical metrics presented in the paper's tables. Also, this notebook contains code for the generation of the ROC curves (Fig 2) and calibration plots (Fig 3) figures. The saved data is in the "Saved Predictions" folder at [https://drive.google.com/drive/folders/1qjy32e_gtoafJlajz9N8v14aPLFbhX8o?usp=sharing](https://drive.google.com/drive/folders/1SxetDYJoWt_sLOc9spp3FttuM-cjRg29?usp=sharing) for download. 
+
+Once downloaded, edit filepaths appropriately.
+
 ## C2GaMe Classifiers
 
 To access and download the RF, KNN, and Logistic Regression classifiers used in the C2GaMe module, please see the "Classifiers" folder at [https://drive.google.com/drive/folders/1qjy32e_gtoafJlajz9N8v14aPLFbhX8o?usp=sharing](https://drive.google.com/drive/folders/1SxetDYJoWt_sLOc9spp3FttuM-cjRg29?usp=sharing).
